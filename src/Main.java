@@ -1,15 +1,38 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
 public class Main {
+    private static final Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        System.out.println("Exercise 1");
+        solvePerimeterRectangle();
+        solveArea();
+    }
+    private static int getInput(){
+        while(true){
+            try {
+                return sc.nextInt();
+            } catch (Exception e){
+                System.out.println("Invalid input");
+                sc.nextLine();
+            }
         }
     }
+    private static void solvePerimeterRectangle(){
+        System.out.print("Enter width: ");
+        int width = getInput();
+        System.out.print("Enter height: ");
+        int height = getInput();
+
+        System.out.println("Perimeter of rectangle:"+ ((width+height)*2));
+    }
+
+    private static void solveArea(){
+        System.out.print("Enter width: ");
+        int width = getInput();
+        System.out.print("Enter height: ");
+        int height = getInput();
+
+        System.out.println("Area of rectangle:"+ (width*height));
+    }
+
+
 }
