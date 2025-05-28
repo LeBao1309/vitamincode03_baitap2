@@ -1,16 +1,34 @@
 import java.util.Scanner;
 public class Main {
     private static final Scanner sc = new Scanner(System.in);
+    private static String continueMethod ="";
     public static void main(String[] args) {
-        System.out.println("Exercise 1");
-        solvePerimeterRectangle();
-        solveArea();
+        System.out.print("Choose method : ");
+        int method = getInput();
 
-        System.out.println("Exercise 2");
-        calculateBasicOperations();
+        switch (method) {
+            case 1:
+                System.out.println("Exercise 1");
+                solvePerimeterRectangle();
+                solveArea();
+                break;
+            case 2:
+                System.out.println("Exercise 2");
+                calculateBasicOperations();
+                break;
 
-        System.out.println("Exercise 3");
-        bankInterest();
+            case 3:
+                System.out.println("Exercise 3");
+                bankInterest();
+                break;
+            case 4:
+                System.out.println("Exercise 4");
+                checkEvenOrOdd();
+                break;
+            default:
+                System.out.println("Invalid choice");
+                break;
+        }
     }
     private static int getInput(){
         while(true){
@@ -60,7 +78,6 @@ public class Main {
 
     private static void bankInterest(){
         final double rate = 0.8;
-        String continueMethod;
         do {
             System.out.print("Enter the principal amount: ");
             double principal = sc.nextDouble();
@@ -79,5 +96,23 @@ public class Main {
 
         } while (continueMethod.equalsIgnoreCase("y"));
              System.out.println("Program finished.");
+    }
+
+    private static void checkEvenOrOdd(){
+
+        do{
+            System.out.print("Enter number: ");
+            int number = getInput();
+
+            if(number % 2 == 0){
+            System.out.println("Even");
+            } else {
+                System.out.println("Odd");
+            }
+            System.out.print("Do you want to continue? (y/n): ");
+            continueMethod = sc.nextLine();
+
+        }while(continueMethod.equalsIgnoreCase("y"));
+        System.out.println("Program finished.");
     }
 }
