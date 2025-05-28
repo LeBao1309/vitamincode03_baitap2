@@ -8,6 +8,9 @@ public class Main {
 
         System.out.println("Exercise 2");
         calculateBasicOperations();
+
+        System.out.println("Exercise 3");
+        bankInterest();
     }
     private static int getInput(){
         while(true){
@@ -55,4 +58,26 @@ public class Main {
         }
     }
 
+    private static void bankInterest(){
+        final double rate = 0.8;
+        String continueMethod;
+        do {
+            System.out.print("Enter the principal amount: ");
+            double principal = sc.nextDouble();
+
+            System.out.print("Enter the times : ");
+            double times = sc.nextDouble();
+
+            double interest = (principal * rate * times) / 100;
+
+            System.out.printf("The interest after %.1f year(s) is: %.2f VND\n", times, interest);
+
+
+            System.out.print("Do you want to continue? (y/n): ");
+            sc.nextLine();
+            continueMethod = sc.nextLine();
+
+        } while (continueMethod.equalsIgnoreCase("y"));
+             System.out.println("Program finished.");
+    }
 }
