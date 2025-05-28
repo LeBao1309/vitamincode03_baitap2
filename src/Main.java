@@ -5,6 +5,9 @@ public class Main {
         System.out.println("Exercise 1");
         solvePerimeterRectangle();
         solveArea();
+
+        System.out.println("Exercise 2");
+        calculateBasicOperations();
     }
     private static int getInput(){
         while(true){
@@ -34,5 +37,22 @@ public class Main {
         System.out.println("Area of rectangle:"+ (width*height));
     }
 
+    private static void calculateBasicOperations() {
+        System.out.print("Enter first number: ");
+        int number1 = getInput();
+
+        System.out.print("Enter second number: ");
+        int number2 = getInput();
+
+        System.out.println("Sum: " + (number1 + number2));
+        System.out.println("Difference: " + (number1 - number2));
+        System.out.println("Product: " + (number1 * number2));
+
+        if (number2 != 0) {
+            System.out.printf("Quotient: %.2f%n", ((double) number1 / number2));
+        } else {
+            System.out.println("Cannot divide by zero.");
+        }
+    }
 
 }
